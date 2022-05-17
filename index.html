@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Wear a mask!</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<style type="text/css">
+            /* CLIENT-SPECIFIC STYLES */
+			body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+			table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+			img { -ms-interpolation-mode: bicubic; }
+			
+			/* RESET STYLES */
+			img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+			table { border-collapse: collapse !important; }
+			body { height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important; }
+			
+			/* iOS BLUE LINKS */
+			a[x-apple-data-detectors] {
+			    color: inherit !important;
+			    text-decoration: none !important;
+			    font-size: inherit !important;
+			    font-family: inherit !important;
+			    font-weight: inherit !important;
+			    line-height: inherit !important;
+			}
+			
+			/* GMAIL BLUE LINKS */
+			u + #body a {
+			    color: inherit;
+			    text-decoration: none;
+			    font-size: inherit;
+			    font-family: inherit;
+			    font-weight: inherit;
+			    line-height: inherit;
+			}
+			
+			/* SAMSUNG MAIL BLUE LINKS */
+			#MessageViewBody a {
+			    color: inherit;
+			    text-decoration: none;
+			    font-size: inherit;
+			    font-family: inherit;
+			    font-weight: inherit;
+			    line-height: inherit;
+			}
+
+            /* BUTTON & LINK HOVER */
+            .button:hover {
+                background-color:#168395 !important;
+                color: #FFFFFF !important;
+                cursor: pointer;
+            }
+
+            a.link:hover {
+                background-color:#168395 !important;
+                color: #FFFFFF !important;
+            }
+
+            /* RADIO BUTTONS - REMINDER TABS */
+            /* HIDES DEFAULT RADIO BUTTONS */
+            input { display: none !important; }
+
+            /* CHANGE STYLE OF SELECTED LABEL */
+            #slide1:checked ~ #label-for-slide1,
+            #slide2:checked ~ #label-for-slide2,
+            #slide3:checked ~ #label-for-slide3 {
+                background-color: #5AB7CA !important;
+                color: white !important;
+                border: 1px solid black !important;
+            }
+
+            /* MAKE REMINDER LABELS LOOK CLICKABLE */
+            label { cursor: pointer !important; }
+
+            /* HIDE ALL REMINDERS BY DEFAULT */
+            .slide { display: none !important; }
+
+            /* DISPLAY REMINDER CORRESPONDING TO CHECKED INPUT */
+            #slide1:checked ~ .slide1,
+            #slide2:checked ~ .slide2,
+            #slide3:checked ~ .slide3 {
+                display: block !important;
+            }
+
+			/* RESPONSIVE STYLING */
+            @media screen and (max-width: 600px) {
+                /* TARGET FIXED WIDTH TABLES */
+                .mobile{
+                    width: 100% !important;
+                }
+
+                /* STACKS COLS WITHIN FLUID TABLE */
+                .block{
+                    display: block !important; 
+                    width: 100% !important;
+                }
+
+                /* LINE HEIGHT ADJUSTMENT FOR TITLE */
+                .email-title {
+                    line-height: 36px !important;
+                }
+
+                /* DECREASE H1 AND H2 FONT SIZE */
+                h1 {
+                    font-size: 38px !important;
+                }
+
+                h2 {
+                    font-size: 32px !important;
+                    line-height: 37px !important;
+                }
+            }
+
+            /* REMINDER ANIMATION */
+            @keyframes slidein {
+                from {
+                    opacity: 0;
+                    transform: translateX(100px); 
+                }
+
+                to {
+                    opacity: 100%;
+                    transform: translateX(0); 
+                }
+            }
+	
+            .slidein {
+                animation: 2s 1 slidein;
+            }
+
+		</style>
+	</head>
+	<body id="body" style="margin: 0 !important; padding: 0 !important; background-color: #EBEBEB; 
+        font-family: 'Lato', Verdana, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; color: #919191; min-width: 300px;">
+
+        <!-- EMAIL -->
+        <table width="100%" cellspacing="0px" cellpadding="0px" border="0px">
+
+            <!-- MAIN -->
+            <tr>
+
+                <!-- LHS OF EMAIL -->
+                <td bgcolor="#EBEBEB" font-size="0px"><p></p></td>
+    
+                <!-- CENTER -->
+                <td class="mobile" bgcolor="#FFFFFF" width="600px" align="center">
+
+                    <!-- CENTER COLUMN -->
+                    <table width="100%" cellspacing="0" cellpadding="0" role="presentation" border="0px">
+
+                        <!-- CONTENT -->
+                        <td>
+                            <!-- ROWS WHICH MAKE UP EMAIL STRUCTURE -->
+
+                            <tr>
+                                <td bgcolor="#168395" style="padding: 0px 50px;">
+                                    <!-- TWO COLUMN COMPONENT -->
+                                    <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
+                                        <tr>
+                                            <td>
+                                                <!-- LOGO IMAGE -->
+                                                <!-- LEFT COLUMN -->
+                                                <table width="20%" align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" class="block">
+                                                    <tr>
+                                                        <td align="center" style="padding-top: 15px;">
+                                                             <img src="./images/compressed/briefcase-medical-min.png" alt="company logo" width="50px" height="auto">
+                                                        </td>
+                                                     </tr>
+                                                </table>
+        
+                                                <!-- EMAIL NAME -->
+                                                <!-- RIGHT COLUMN -->
+                                                <table width="75%" align="left" border="0" cellpadding="0" cellspacing="0" role="presentation" class="block">
+                                                    <tr>
+                                                        <td align="center" style="padding-top: 0px;">
+                                                            <p align="center" style="color: white; line-height: 5px;">A friendly reminder from the</p>
+                                                            <h1 class="email-title" align="center" style="font-size: 42px; color: white; padding-top: 0px; line-height: 0px;">
+                                                                COVID FIGHTERS
+                                                            </h1>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <!-- HERO IMAGE -->
+                            <tr>
+                                <td align="left" bgcolor="#80C7D6">
+                                     <img src="./images/compressed/HeaderBackground-min.png" alt="hero image of germs floating" style="display: block; width: 100%; max-width: 100%; min-width: 100px;" width="600px" height="auto">
+                                </td> 
+                             </tr>
+
+                             <!-- HEADLINE 1-->
+                            <!-- H2 -->
+                            <tr>
+                                <td align="left" style="padding-left: 50px; padding-top: 25px; padding-bottom: 0px; padding-right: 50px; font-weight: 700;">
+                                    <h2 style="font-size: 36px; line-height: 43px; color: #272727">
+                                        <strong>
+                                            The world has been fighting<br> against Covid-19 for far too long.
+                                        </strong>
+                                    </h2>
+                                </td> 
+                             </tr>
+
+                             <!-- BODY COPY 1 -->
+                            <!-- IMG 1 -->
+                            <tr>
+                                <td align="center">
+                                     <img src="./images/compressed/globe-image-min.png" alt="illustration of globe surrounded by germs" width="197px" height="auto">
+                                </td> 
+                             </tr>
+
+                            <!-- H2 -->
+                            <tr>
+                                <td align="center" style="padding: 10px 50px 0px 50px; font-weight: 700;">
+                                    <h3 style="font-size: 18px; line-height: 27px; color: #5AB7CA">
+                                        <em>
+                                            We have all been affected by Covid-19 one way or another.  
+                                        </em>
+                                    </h3>
+                                </td> 
+                             </tr>
+
+                            <!-- PARAGRAPH 1 -->
+                            <tr>
+                                <td align="left" style="padding: 0px 50px 50px 50px;">
+                                    <p>
+                                        By now, many of us have either been through or know someone who has suffered from the Corona virus. 
+                                        Some people were lucky enough to live through the disease, but others have not and have lost their lives. 
+                                        So far, Covid has taken the lives of over 500,000 thousand Americans as that number continues to rise. 
+                                        This is why we must maintain our responsibility to others and try to do the most we can to slow the spread
+                                        of this deadly pandemic.
+                                    </p>
+                                </td> 
+                             </tr>
+
+                            <!-- IMG 2 -->
+                            <tr>
+                                <td align="center">
+                                     <img src="./images/compressed/covid-everywhere-image-min.png" alt="illustration of character scared of germs" width="210px" height="auto">
+                                </td> 
+                             </tr>
+
+                            <!-- H2 -->
+                            <tr>
+                                <td align="center" style="padding: 10px 50px 0px 50px; font-weight: 700;">
+                                    <h3 style="font-size: 18px; line-height: 27px; color: #5AB7CA">
+                                        <em>               
+                                            There have been over 28 million cases in the US.
+                                        </em>
+                                    </h3>
+                                </td> 
+                             </tr>
+
+                            <!-- PARAGRAPH 2 -->
+                            <tr>
+                                <td align="left" style="padding: 0px 50px;">
+                                    <p>
+                                        The US has the highest amount of covid cases in the world by far. Our country has over more than double the amount
+                                        next country, India, which has over 11 million cases. For whatever reason, people did/do not follow safety protocols
+                                        set by the CDC to minimize the case count. Whether we hate wearing a mask, miss social gatherings, or simply don't believe
+                                        in vaccines, we must remind ourselves of the importance of following the safety guidelines. Here are three useful reminders:
+
+                                    </p>
+                                </td> 
+                             </tr>
+
+                             <!-- RADIO BUTTON COMPONENT WITH ANIMATION -->
+                             <tr>
+                                 <td align="center" style="padding-left: 50px; padding-right: 50px; padding-bottom: 50px;">
+                                     <!-- radio buttons used to switch through content -->
+                                     <input type="radio" name="slides" id="slide1" checked>
+                                     <input type="radio" name="slides" id="slide2">
+                                     <input type="radio" name="slides" id="slide3">
+
+                                     <!-- labels for the radion buttons above -->
+                                     <label id="label-for-slide1" for="slide1" style="border: 1px dashed black; margin: 10px; padding: 10px; display: inline-block; color: #272727; font-weight: 500;"> Reminder #1 </label>
+                                     <label id="label-for-slide2" for="slide2" style="border: 1px dashed black; margin: 10px; padding: 10px; display: inline-block; color: #272727; font-weight: 500;"> Reminder #2</label>
+                                     <label id="label-for-slide3" for="slide3" style="border: 1px dashed black; margin: 10px; padding: 10px; display: inline-block; color: #272727; font-weight: 500;"> Reminder #3</label>
+
+                                     <!-- content to be switched -->
+                                     <div class="slide slide1 slidein" style="padding: 20px;">
+                                        <p>
+                                            We can still spread the virus even if we don't feel any symptoms.
+                                        </p>
+                                     </div>
+
+                                     <div class="slide slide2 slidein" style="padding: 20px;">
+                                        <p>
+                                            Is that social gathering worth the risk of bringing the virus home to your family?
+                                        </p>
+                                     </div>
+
+                                     <div class="slide slide3 slidein" style="padding: 20px;">
+                                        <p>
+                                            We will probably live through it, but folks who are at risk may not.
+                                        </p>
+                                     </div>
+                                 </td>
+                             </tr>
+
+                             <!-- IMG 3 -->
+                            <tr>
+                                <td align="center">
+                                     <img src="./images/compressed/covid-warrior-image-min.png" alt="illustration of old man holding soap and sanitizer" width="115px" height="auto">
+                                </td> 
+                             </tr>
+
+                            <!-- H2 -->
+                            <tr>
+                                <td align="center" style="padding: 10px 50px 0px 50px; font-weight: 700;">
+                                    <h3 style="font-size: 18px; line-height: 27px; color: #5AB7CA">
+                                        <em>
+                                            Let's all continue to chip in our efforts to get our lives back to the way they were in 2019 b.c. 
+                                        </em>
+                                    </h3>
+                                </td> 
+                             </tr>
+
+                            <!-- PARAGRAPH 3 -->
+                            <tr>
+                                <td align="left" style="padding: 0px 50px 0px 50px;">
+                                    <p>
+                                        Here are three things you can easily do to minimize the risk of catching Covid everyday: 
+                                    </p>
+                                </td> 
+                            </tr>
+
+                            <!-- THREE COLUMN COMPONENT -->
+                            <tr>
+                                <td style="padding: 0px 50px 50px 50px;">
+                                    <!-- FLUID TABLE -->
+                                    <table width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                                        <tr>
+                                            <td>
+                                                <!-- FIRST COLUMN -->
+                                                <table class="block" align="left" width="33.3%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                                                    <tr>
+                                                        <td style="padding: 0px 5px;">
+                                                            <h4 style="font-weight: 700; color: #272727; line-height: 5px;" align="center">Wear A Mask</h3>
+                                                            <p style="font-size: 14px;">
+                                                                Masks are an additional step to help prevent people from getting and spreading COVID-19. They provide a barrier that keeps respiratory droplets from spreading.
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                                <!-- SECOND COLUMN -->
+                                                <table class="block" align="left" width="33.3%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                                                    <tr>
+                                                        <td style="padding: 0px 5px;">
+                                                            <h4 style="font-weight: 700; color: #272727; line-height: 5px;" align="center">Keep Distance</h3>
+                                                            <p style="font-size: 14px;">
+                                                                Limiting close face-to-face contact with others is the best way to reduce the spread of coronavirus disease 2019 (COVID-19).
+                                                            </p>    
+                                                        </td>
+                                                    </tr>
+                                                </table>
+
+                                                <!-- THIRD COLUMN -->
+                                                <table class="block" align="left" width="33.3%" border="0" cellpadding="0" cellspacing="0" role="presentation">
+                                                    <tr>
+                                                        <td style="padding: 0px 5px;">
+                                                            <h4 style="font-weight: 700; color: #272727; line-height: 5px;" align="center">Wash Your Hands</h3>
+                                                            <p style="font-size: 14px;">
+                                                                Wash your hands often with soap and water for at least 20 seconds especially after you have been in a public place, or after blowing your nose, coughing, or sneezing.
+                                                            </p>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                             </tr>                             
+                             
+                             <!-- HEADLINE 2 -->
+                             <!-- H2 -->
+                            <tr>
+                                <td align="left" style=" padding-top: 0px; padding-left: 50px; padding-bottom: 0px; padding-right: 50px; font-weight: 700;">
+                                    <h2 style="font-size: 36px; line-height: 43px; color: #272727">
+                                        <strong>
+                                            Join the Covid Fighters!
+                                        </strong>
+                                    </h2>
+                                </td> 
+                             </tr>
+
+                             <!-- BODY COPY 2 -->
+                             <!-- H3 -->
+                            <tr>
+                                <td align="left" style="padding: 0px 50px 0px 50px; font-weight: 700;">
+                                    <h3 style="font-size: 18px; line-height: 27px; color: #5AB7CA">
+                                        Covid fighters is a fictional group created for the purposes of this assignment. 
+                                    </h3>
+                                </td> 
+                             </tr>
+
+                             <!-- PARAGRAPH 4 -->
+                            <tr>
+                                <td align="left" style="opacity: 55%; color: white; padding: 0px 50px 15px 50px; background: #168395 url('https://source.unsplash.com/WBqaBbrL-P8/600x191'); background-repeat: no-repeat; background-position: center; background-size: cover;" background="https://source.unsplash.com/WBqaBbrL-P8/600x191" bgcolor="#168395">
+                                    <p>
+                                        Some of the content in this email comes directly from the CDC website. 
+                                        If you would like to learn more about Covid-19 from their official site, click the link below.
+                                    </p>
+                                </td> 
+                             </tr>
+
+                             <!-- BUTTON -->
+                            <tr>
+                                <td align="center" style="padding: 75px 50px 75px 50px; background-color: #FFFFFF;">
+                                    <table cellspacing="0px" cellpadding="0" role="presentation" border="0px">
+                                        <tr>
+                                            <td class="button" style="border: none; background-color:#5AB7CA; padding: 15px 20px; border-radius: 5px;" align="center;">                                                
+                                                <a href="https://www.cdc.gov/coronavirus/2019-nCoV/index.html" target="_blank" style="text-decoration: none; color: #FFFFFF; font-weight: 700;">
+                                                    Learn More
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td> 
+                            </tr>
+
+                            <!-- FOOTER INFORMATION-->                            
+                            <tr>
+                                <td align="center" bgcolor="#5AB7CA">
+                                    <table class="block" cellspacing="0px" cellpadding="0" role="presentation" border="0px">
+                                        <td>
+                                            <tr>
+                                                <!-- FACEBOOK LINK -->
+                                                <td style="padding: 10px; display: inline-block;">
+                                                    <a href="https://www.facebook.com" target="_blank" >
+                                                        <img src="./images/compressed/facebook-f-min.png" alt="facebook icon" height="auto" width="19.28px"/>
+                                                    </a>
+                                                </td>
+    
+                                                <!-- YOUTUBE LINK -->
+                                                <td style="padding: 10px 50px;  display: inline-block;">
+                                                    <a href="https://www.youtube.com" target="_blank" >
+                                                        <img src="./images/compressed/youtube-min.png" alt="youtube icon" height="auto" width="38.4px"/>
+                                                    </a>
+                                                </td>
+    
+                                                <!-- TWITTER LINK -->
+                                                <td style="padding: 10px; display: inline-block;">
+                                                    <a href="https://www.twitter.com" target="_blank" >
+                                                        <img src="./images/compressed/twitter-min.png" alt="facebook icon" height="auto" width="36px"/>
+                                                    </a>
+                                                </td>
+                                            </tr>                                 
+                                        </td>
+                                    </table>
+                                </td>
+                            </tr>
+
+                            <!-- UNSUBSCRIBE -->
+                            <tr>
+                                <td align="left" style="text-align: left; font-size: 12px; color: #919191; padding-top: 25px; padding-left: 50px; background-color: #f0f0f0; line-height: 12px;">
+                                    <p>
+                                        Illustrations by <a class="link" href="https://dribbble.com/AnnaGolde" style="color: #919191;">Anna Golde</a> from <a class="link" href="https://icons8.com/" style="color: #919191;">Icons8</a>
+                                    </p>
+                                    <p>
+                                        If you wish to unsubscribe, <a class="link" href="#" style="color: #919191;">click here</a>
+                                    </p>
+                                </td>
+                            </tr>
+
+                            <!-- CONTACT INFORMATION -->
+                            <tr>
+                                <td align="left" style="text-align: center; font-size: 12px; color: #919191; background-color: #f0f0f0;">
+                                    <p>
+                                        The Covid Fighters | 1234 Far Away Drive | Unknown, UK | 1(800) SIX-FEET
+                                    </p>
+                                </td>
+                            </tr>
+
+                        </td>
+
+                    </table>
+
+                </td>
+    
+                <!-- RHS OF EMAIL-->
+                <td bgcolor="#EBEBEB" font-size="0px"><p></p></td>                
+
+            </tr>            
+
+        </table>	
+
+	</body>
+</html>
